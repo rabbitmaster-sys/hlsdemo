@@ -1,5 +1,8 @@
 #EXTM3U
 #EXT-X-VERSION:3
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXT-X-TARGETDURATION:11
+#EXT-X-MEDIA-SEQUENCE:0
 #EXTINF:10.0000,
 https://anondrop.net/1369315010144370768/193039199_mp4_h264_aac_hq_7.ts?download=true
 #EXTINF:10.0000,
@@ -128,3 +131,4 @@ https://anondrop.net/1369316322738962432/193039199_mp4_h264_aac_hq_7.ts?download
 https://anondrop.net/1369316335263289375/193039199_mp4_h264_aac_hq_7.ts?download=true
 #EXTINF:4.6000,
 https://anondrop.net/1369316347099480155/193039199_mp4_h264_aac_hq_7.ts?download=true
+#EXT-X-ENDLIST
