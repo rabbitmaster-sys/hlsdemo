@@ -1,4 +1,5 @@
 #EXTM3U
+#EXT-X-VERSION:3
 #EXTINF:10.0000,
 https://anondrop.net/1369315010144370768/193039199_mp4_h264_aac_hq_7.ts?download=true
 #EXTINF:10.0000,
@@ -73,6 +74,8 @@ https://anondrop.net/1369315986322227393/193039199_mp4_h264_aac_hq_7.ts?download
 https://anondrop.net/1369315997793652929/193039199_mp4_h264_aac_hq_7.ts?download=true
 #EXTINF:10.0000,
 https://anondrop.net/1369316008917073992/193039199_mp4_h264_aac_hq_7.ts?download=true
+#EXTINF:10.0000,
+https://anondrop.net/1369322429511635006/193039199_mp4_h264_aac_hq_7.ts?download=true
 #EXTINF:10.0000,
 https://anondrop.net/1369316032904302612/193039199_mp4_h264_aac_hq_7.ts?download=true
 #EXTINF:10.0000,
