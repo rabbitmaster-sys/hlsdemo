@@ -1,3 +1,4 @@
+<!--  GPT GEN FOR TESTING -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,13 +11,13 @@
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script>
     const video = document.getElementById('video');
-    const m3u8Url = 'https://raw.githubusercontent.com/rabbitmaster-sys/hlsdemo/refs/heads/main/rawFileFreeHost/index.m3u8'; // Replace with your .m3u8 URL
+    const m3u8Url = 'https://raw.githubusercontent.com/rabbitmaster-sys/hlsdemo/refs/heads/main/rawFileFreeHost/index.m3u8';
     if (Hls.isSupported()) {
       const hls = new Hls();
       hls.loadSource(m3u8Url);
       hls.attachMedia(video);
       hls.on(Hls.Events.MANIFEST_PARSED, function () {
-        video.play();
+        console.log("File Ready");
       });
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
       // Native support (e.g., Safari)
