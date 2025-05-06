@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Simple HLS Player</title>
+</head>
+<body>
+  <video id="video" controls width="640" height="360"></video>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script>
+    const video = document.getElementById('video');
+    const m3u8Url = 'https://raw.githubusercontent.com/rabbitmaster-sys/hlsdemo/refs/heads/main/rawFileFreeHost/index.m3u8'; // Replace with your .m3u8 URL
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(m3u8Url);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, function () {
+        video.play();
+      });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      // Native support (e.g., Safari)
+      video.src = m3u8Url;
+      video.addEventListener('loadedmetadata', () => video.play());
+    } else {
+      alert('HLS not supported in this browser');
+    }
+  </script>
+</body>
+</html>
