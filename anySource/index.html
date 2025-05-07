@@ -1,0 +1,60 @@
+<!-- GPT GET FOR TESTING
+<!DOCTYPE html> -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HLS Player</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, button {
+      padding: 10px;
+      margin-right: 10px;
+      width: 60%;
+    }
+    video {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      margin-top: 20px;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter HLS (.m3u8) Stream URL</h2>
+  <input type="text" id="hlsUrl" placeholder="https://example.com/stream.m3u8">
+  <button onclick="loadStream()">Load Stream</button>
+
+  <video id="video" controls></video>
+
+  <script>
+    function loadStream() {
+      const url = document.getElementById('hlsUrl').value;
+      const video = document.getElementById('video');
+
+      if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+          video.play();
+        });
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        // Native HLS support (e.g., Safari)
+        video.src = url;
+        video.addEventListener('loadedmetadata', function () {
+          video.play();
+        });
+      } else {
+        alert("HLS is not supported in this browser.");
+      }
+    }
+  </script>
+
+</body>
+</html>
